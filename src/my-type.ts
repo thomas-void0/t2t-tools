@@ -218,6 +218,48 @@
   */
  type _Uncapitalize<S extends string> = Uncapitalize<S>
  
+ /**
+  * 获取联合类型T与联合类型U的交叉类型
+  * @example
+  * 输入：
+  * type example = _GetIntersection<"a" | "b" | "23","a">
+  * 输出：
+  * type example = "a"
+  */
+ type _GetIntersection<T, U> = T extends U ? T : never
+ 
+ /**
+  * 获取联合类型T与联合类型U不同的类型
+  * @example
+  * 输入：
+  * type example = _GetDifference<"a" | "b" | "23","a">
+  * 输出：
+  * type example = "b" | "23"
+  */
+ type _GetDifference<T, U> = T extends U ? never : T
+ 
+ /**
+  * 获取联合类型T与其子类型中不同的部分
+  * @example
+  * 输入：
+  * type example = _GetComplement<"a" | "b" | "23","a">
+  * 输出：
+  * type example = "b" | "23"
+  */
+ type _GetComplement<T, T1 extends T> = T extends T1 ? never : T
+ 
+ /**
+  * 获取T类型中与U类型两者中不同的部分
+  * SymmetricDifference<'1' | '2' | '3', '2' | '3' | '4'> Expect: "1" | "4"
+  * @example
+  * 输入：
+  * type example = _SymmetricDifference<'1' | '2' | '3', '2' | '3' | '4'>
+  * 输出：
+  * type example = '1' | '4'
+  */
+ 
+ type _SymmetricDifference<T, U> = _GetDifference<T | U,T & U>
+ 
  export {
      _Pick,
      _Readonly,
@@ -235,6 +277,10 @@
      _Uppercase,
      _Lowercase,
      _Capitalize,
-     _Uncapitalize
+     _Uncapitalize,
+     _GetIntersection,
+     _GetDifference,
+     _GetComplement,
+     _SymmetricDifference
  }
  
