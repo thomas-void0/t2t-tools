@@ -279,30 +279,48 @@ type _SymmetricDifference<T, U> = _GetDifference<T | U, T & U>
  */
  type _NonNullAndUndefined<T> = T extends undefined | null ? never : T
 
+ /**
+ * 取出T中的属性，此属性同样存在于U
+ * @example
+ * 输入：
+ * type Example1 = {
+ *   name: string
+ * }
+ * type Example2 = {
+ *   age: number
+ *    name:string
+ * }
+ * type example = _Intersection<Example1,Example2>
+ * 输出：
+ * type example = {
+ *  name: string;
+ * }
+ */
+type _Intersection<T, U> = _Pick<T & U, keyof T & keyof U>
 
- export {
-    _Pick,
-    _Readonly,
-    _Partial,
-    _Required,
-    _Record,
-    _Exclude,
-    _Extract,
-    _Omit,
-    _NonNullable,
-    _Parameters,
-    _ReturnType,
-    _ConstructorParameters,
-    _InstanceType,
-    _Uppercase,
-    _Lowercase,
-    _Capitalize,
-    _Uncapitalize,
-    _GetIntersection,
-    _GetDifference,
-    _GetComplement,
-    _SymmetricDifference,
-    _NonUndefined,
-    _NonNullAndUndefined,
- }
- 
+export {
+   _Pick,
+   _Readonly,
+   _Partial,
+   _Required,
+   _Record,
+   _Exclude,
+   _Extract,
+   _Omit,
+   _NonNullable,
+   _Parameters,
+   _ReturnType,
+   _ConstructorParameters,
+   _InstanceType,
+   _Uppercase,
+   _Lowercase,
+   _Capitalize,
+   _Uncapitalize,
+   _GetIntersection,
+   _GetDifference,
+   _GetComplement,
+   _SymmetricDifference,
+   _NonUndefined,
+   _NonNullAndUndefined,
+   _Intersection
+}
