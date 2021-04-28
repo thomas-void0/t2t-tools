@@ -269,6 +269,17 @@ type _SymmetricDifference<T, U> = _GetDifference<T | U, T & U>
  */
  type _NonUndefined<T> = T extends undefined ? never : T
  
+/**
+ * 去除联合类型T中的undefined和null类型
+ * @example
+ * 输入：
+ * type example = _NonNullAndUndefined<'1' | '2' | '3' | undefined ｜ null>
+ * 输出：
+ * type example = "1" | "2" | "3"
+ */
+ type _NonNullAndUndefined<T> = T extends undefined | null ? never : T
+
+
  export {
     _Pick,
     _Readonly,
@@ -291,6 +302,7 @@ type _SymmetricDifference<T, U> = _GetDifference<T | U, T & U>
     _GetDifference,
     _GetComplement,
     _SymmetricDifference,
-    _NonUndefined
+    _NonUndefined,
+    _NonNullAndUndefined,
  }
  
