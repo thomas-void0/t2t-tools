@@ -298,6 +298,23 @@ type _SymmetricDifference<T, U> = _GetDifference<T | U, T & U>
  */
 type _Intersection<T, U> = _Pick<T & U, keyof T & keyof U>
 
+/**
+ * 去除readonly属性
+ * @example
+ * 输入：
+ * type Example = {
+ *    a:string
+ * }
+ * type example = _Mutable<Example>
+ * 输出：
+ * type example = {
+ * a: string;
+ * }
+ */
+type _Mutable<T> = {
+  -readonly [P in keyof T]:T[P]
+}
+
 export {
    _Pick,
    _Readonly,
@@ -322,5 +339,6 @@ export {
    _SymmetricDifference,
    _NonUndefined,
    _NonNullAndUndefined,
-   _Intersection
+   _Intersection,
+   _Mutable
 }

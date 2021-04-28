@@ -1,4 +1,4 @@
-import { _Pick, _Exclude } from "../src/my-type";
+import { _Pick, _Exclude, _Omit } from "../src/my-type";
 /**
  * 合并类型T与类型U
  * @example
