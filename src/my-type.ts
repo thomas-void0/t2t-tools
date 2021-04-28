@@ -257,30 +257,40 @@
   * 输出：
   * type example = '1' | '4'
   */
+type _SymmetricDifference<T, U> = _GetDifference<T | U, T & U>
  
- type _SymmetricDifference<T, U> = _GetDifference<T | U,T & U>
+/**
+ * 去除联合类型T中的undefined类型
+ * @example
+ * 输入：
+ * type example = _NonUndefined<'1' | '2' | '3' | undefined>
+ * 输出：
+ * type example = "1" | "2" | "3"
+ */
+ type _NonUndefined<T> = T extends undefined ? never : T
  
  export {
-     _Pick,
-     _Readonly,
-     _Partial,
-     _Required,
-     _Record,
-     _Exclude,
-     _Extract,
-     _Omit,
-     _NonNullable,
-     _Parameters,
-     _ReturnType,
-     _ConstructorParameters,
-     _InstanceType,
-     _Uppercase,
-     _Lowercase,
-     _Capitalize,
-     _Uncapitalize,
-     _GetIntersection,
-     _GetDifference,
-     _GetComplement,
-     _SymmetricDifference
+    _Pick,
+    _Readonly,
+    _Partial,
+    _Required,
+    _Record,
+    _Exclude,
+    _Extract,
+    _Omit,
+    _NonNullable,
+    _Parameters,
+    _ReturnType,
+    _ConstructorParameters,
+    _InstanceType,
+    _Uppercase,
+    _Lowercase,
+    _Capitalize,
+    _Uncapitalize,
+    _GetIntersection,
+    _GetDifference,
+    _GetComplement,
+    _SymmetricDifference,
+    _NonUndefined
  }
  
