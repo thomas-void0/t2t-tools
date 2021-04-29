@@ -326,7 +326,8 @@ type _Mutable<T> = {
 type _IfEquals<A, B, X = A, Y = never> =
    (<T>() => T extends A ? 1 : 2) extends (<T>() => T extends B ? 1 : 2) ?
    X : Y
-   
+
+
 export {
    _Pick,
    _Readonly,
@@ -353,5 +354,6 @@ export {
    _NonNullAndUndefined,
    _Intersection,
    _Mutable,
-   _IfEquals
+   _IfEquals,
+   _RequiredKeys
 }

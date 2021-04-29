@@ -10,7 +10,7 @@ import { _IfEquals, _Pick } from "../src/my-type";
  *   readonly foo: string;
  *}
  */
-type _Readonly<T> = _Pick<
+export type _Readonly<T> = _Pick<
   T,
   {
     [K in keyof T]: _IfEquals<
