@@ -1,7 +1,7 @@
 import { _Pick } from "../baseType";
+
 /**
- * 取出所有必须的key，
- * @example
+ * 要求
  * 输入：
  * type Example = { foo?: string; bar: number }
  * type example = _RequiredKeys<Example>
@@ -14,6 +14,15 @@ type example1 = {} extends { a?: string } ? 1 : 2; // 1
 type example2 = {} extends { a: string } ? 1 : 2; // 2
 
 //所以实现如下：
+/**
+ * 取出所有必须的key，
+ * @example
+ * 输入：
+ * type Example = { foo?: string; bar: number }
+ * type example = _RequiredKeys<Example>
+ * 输出；
+ * type example = "bar"
+ */
 export type _RequiredKeys<T> = {
   [K in keyof T]-?: {} extends _Pick<T, K> ? never : K;
 }[keyof T];

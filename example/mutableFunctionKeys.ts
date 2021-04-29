@@ -1,7 +1,6 @@
 import { _NonUndefined } from "../baseType";
 /**
- * 例子一、获取一个类型中，属性为可选同时属性值的类型为函数的key
- * @example
+ * 要求：
  * 输入：
  * type Example = {
  *  name: string;
@@ -18,6 +17,20 @@ import { _NonUndefined } from "../baseType";
 //1.判断属性值是否为可选
 //2.判断去除了undefined的属性值是否是Function的子类型
 //3.通过[keyof T]的方式遍历取出新类型中满足条件的key
+/**
+ * 获取一个类型中，属性为可选同时属性值的类型为函数的key
+ * @example
+ * 输入：
+ * type Example = {
+ *  name: string;
+ *  setName: (...args: any) => any | undefined;
+ *  someKeys?: string;
+ *  someFn?: (...args: any) => any;
+ * };
+ * type example = _MutableFunctionKeys<Example>
+ * 输出：
+ * type example = "someFn"
+ */
 export type _MutableFunctionKeys<T extends object> = {
   [K in keyof T]-?: undefined extends T[K]
     ? _NonUndefined<T[K]> extends Function

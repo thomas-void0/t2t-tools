@@ -1,6 +1,6 @@
 import { _NonUndefined, _Pick } from "../baseType";
 /**
- * 例一、取出没有包含函数类型的参数的联合类型
+ * 取出没有包含函数类型的参数的联合类型
  * @example
  * 输入：
  * type Example = {
@@ -25,7 +25,7 @@ type Example = {
 type example = _NonFunctionKeys<Example>;
 
 /**
- * 例二、取出没有包含函数类型的参数组成一个新类型
+ * 取出没有包含函数类型的参数组成一个新类型
  * @example
  * 输入：
  * type Example = {

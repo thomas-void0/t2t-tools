@@ -1,7 +1,7 @@
 import { _Pick, _Exclude, _Omit } from "../baseType";
+
 /**
- * 合并类型T与类型U
- * @example
+ * 要求：
  * 输入：
  * type A = {
  * a: string;
@@ -15,6 +15,7 @@ import { _Pick, _Exclude, _Omit } from "../baseType";
  * 输出：
  * type C = { a: string; b: number; c: boolean };
  */
+
 type A = {
   a: string;
   b: number;
@@ -46,6 +47,22 @@ type C = _Pick<_AB, Key>;
 }
  */
 //根据上述特性，合并成一个类型工具
+/**
+ * 合并类型T与类型U
+ * @example
+ * 输入：
+ * type A = {
+ * a: string;
+ * b: number;
+ *};
+ *type B = {
+ *  a: number;
+ *  c: boolean;
+ *};
+ * type C = _Merge<A,B>
+ * 输出：
+ * type C = { a: string; b: number; c: boolean };
+ */
 export type _Merge<
   T,
   U,
