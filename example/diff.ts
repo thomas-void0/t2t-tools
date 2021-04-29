@@ -1,6 +1,16 @@
 import { _Pick, _Exclude, _Omit } from "../baseType";
 /**
  * 找出T类型中，与U类型不相同的属性
+ * @example
+ * 输入：
+ * type A = { name: string; age: number; visible: boolean };
+ * type B = { age: number };
+ * type C = _Diff<A, B>;
+ * 输出：
+ * type C = {
+ *  name: string;
+ *  visible: boolean;
+ * }
  */
 //重点是要找到需要取的key值，
 type A = { name: string; age: number; visible: boolean };
