@@ -1,4 +1,4 @@
-import { _NonUndefined, _Pick } from "../src/my-type";
+import { _NonUndefined, _Pick } from "../baseType";
 /**
  * 例一、取出没有包含函数类型的参数的联合类型
  * @example

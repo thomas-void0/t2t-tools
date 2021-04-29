@@ -1,4 +1,4 @@
-import { _IfEquals, _Pick } from "../src/my-type";
+import { _IfEquals, _Pick } from "../baseType";
 /**
  * 获取readonly的类型
  * @example

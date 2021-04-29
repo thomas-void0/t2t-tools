@@ -1,4 +1,4 @@
-import { _Pick } from "../src/my-type";
+import { _Pick } from "../baseType";
 /**
  * 返回非readonly的类型
  * @example
@@ -26,7 +26,7 @@ type testReadonly = _IfEquals<{ readonly a: string }, { a: string }>; //never
 type testMutable = _IfEquals<{ a: string }, { a: string }, true>; //true
 
 //有了以上的成果后，再求解之前的问题。返回非readonly的类型
-type _MutableKeys<T> = _Pick<
+export type _MutableKeys<T> = _Pick<
   T,
   {
     [K in keyof T]: _IfEquals<

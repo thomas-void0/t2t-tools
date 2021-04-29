@@ -1,4 +1,4 @@
-import { _Pick, _Exclude, _Omit } from "../src/my-type";
+import { _Pick, _Exclude, _Omit } from "../baseType";
 /**
  * 合并类型T与类型U
  * @example
@@ -46,10 +46,11 @@ type C = _Pick<_AB, Key>;
 }
  */
 //根据上述特性，合并成一个类型工具
-type _Merge<T, U, X = _Pick<U, _Exclude<keyof U, keyof T & keyof U>>> = _Pick<
-  T & X,
-  keyof T | keyof X
->;
+export type _Merge<
+  T,
+  U,
+  X = _Pick<U, _Exclude<keyof U, keyof T & keyof U>>
+> = _Pick<T & X, keyof T | keyof X>;
 type C1 = _Merge<A, B>;
 /**
  * type C1 = {

@@ -1,4 +1,4 @@
-import { _Pick } from "../src/my-type";
+import { _Pick } from "../baseType";
 /**
  * 取出所有可选的key
  * @example
