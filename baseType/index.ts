@@ -408,6 +408,17 @@ type _Unionize<T> = {
    [K in keyof T]-?:{[O in K]:T[K]}
 }[keyof T]
 
+/**
+ * 获取Promise的resolve的值类型
+ * @example
+ * 输入：
+ * type Example = Promise<string>
+ * type example = _PromiseType<Example>
+ * 输出：
+ * type example = string
+ */
+type _PromiseType<T extends Promise<any>> = T extends Promise<infer P> ? P : never
+
 export {
    _Pick,
    _Readonly,
@@ -439,6 +450,7 @@ export {
    _PickByValueExact,
    _OmitByValue,
    _OmitByValueExact,
-   _Unionize
+   _Unionize,
+   _PromiseType
 }
 
