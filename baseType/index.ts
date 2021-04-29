@@ -358,6 +358,22 @@ type _PickByValueExact<T, ValueType> = _Pick<T, {
    [P in keyof T]:[ValueType] extends [T[P]] ? [T[P]] extends [ValueType] ? P : never : never
 }[keyof T]>
 
+/**
+ * 通过属性值的类型来排除属性
+ * @example
+ * 输入：
+ * type Example = {a:string,b:number,c:string}
+ * type example = _OmitByValue<Example, string>
+ * 输出：
+ * type example = {
+ *  b: number;
+ * }
+ */
+type _OmitByValue<T, ValueType> = _Pick<T, {
+   [K in keyof T]:T[K] extends ValueType ? never : K
+}[keyof T]>
+
+
 export {
    _Pick,
    _Readonly,
@@ -386,6 +402,7 @@ export {
    _Mutable,
    _IfEquals,
    _PickByValue,
-   _PickByValueExact
+   _PickByValueExact,
+   _OmitByValue
 }
 
