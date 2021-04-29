@@ -343,6 +343,21 @@ type _PickByValue<T, ValueType> = _Pick<T,{
    [K in keyof T]:T[K] extends ValueType ? K : never
 }[keyof T]>
 
+/**
+ * 通过类型值精确匹配类型
+ * @example
+ * 输入：
+ * type Example = {a:string,b:number,c:string | undefined}
+ * type example = _PickByValueExact<Example, string | undefined>
+ * 输出：
+ * type example = {
+ *  c: string | undefined;
+ * }
+ */
+type _PickByValueExact<T, ValueType> = _Pick<T, {
+   [P in keyof T]:[ValueType] extends [T[P]] ? [T[P]] extends [ValueType] ? P : never : never
+}[keyof T]>
+
 export {
    _Pick,
    _Readonly,
@@ -370,6 +385,7 @@ export {
    _Intersection,
    _Mutable,
    _IfEquals,
-   _PickByValue
+   _PickByValue,
+   _PickByValueExact
 }
 
