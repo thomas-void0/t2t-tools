@@ -389,6 +389,24 @@ type _OmitByValueExact<T, ValueType> = _Pick<T, {
    [K in keyof T]:[T[K]] extends [ValueType] ? [ValueType] extends [T[K]] ? never : K : K
 }[keyof T]>
 
+/**
+ * 将类型T拆解为联合类型
+ * @example
+ * 输入：
+ * type Example = { a: string, b: number, c: boolean }
+ * type example = _Unionize<Example>
+ * 输出：
+ * type example = {
+ *   a: string;
+ * } | {
+ *   b: number;
+ * } | {
+ *   c: boolean;
+ * }
+ */
+type _Unionize<T> = {
+   [K in keyof T]-?:{[O in K]:T[K]}
+}[keyof T]
 
 export {
    _Pick,
@@ -420,6 +438,7 @@ export {
    _PickByValue,
    _PickByValueExact,
    _OmitByValue,
-   _OmitByValueExact
+   _OmitByValueExact,
+   _Unionize
 }
 
