@@ -14,7 +14,7 @@ type example1 = {} extends { a?: string } ? 1 : 2; // 1
 type example2 = {} extends { a: string } ? 1 : 2; // 2
 
 //所以实现如下：
-type _RequiredKeys<T> = {
+export type _RequiredKeys<T> = {
   [K in keyof T]-?: {} extends _Pick<T, K> ? never : K;
 }[keyof T];
 type Example = { foo?: string; bar: number };
