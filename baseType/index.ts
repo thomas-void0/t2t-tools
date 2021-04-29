@@ -327,6 +327,21 @@ type _IfEquals<A, B, X = A, Y = never> =
    (<T>() => T extends A ? 1 : 2) extends (<T>() => T extends B ? 1 : 2) ?
    X : Y
 
+/**
+ * 通过类型值获取类型
+ * @example
+ * 输入：
+ * type Example = {a:string,b:number,c:string}
+ * type example = _PickByValue<Example,string>
+ * 输出：
+ * type example = {
+ *  a: string;
+ *  c: string;
+ * }
+ */
+type _PickByValue<T, ValueType> = _Pick<T,{
+   [K in keyof T]:T[K] extends ValueType ? K : never
+}[keyof T]>
 
 export {
    _Pick,
@@ -355,5 +370,6 @@ export {
    _Intersection,
    _Mutable,
    _IfEquals,
+   _PickByValue
 }
 
