@@ -41,3 +41,18 @@ export type _Diff<T extends object, U extends object> = _Omit<
   T,
   keyof T & keyof U
 >;
+
+/**
+ * 获取子集中的差异
+ * @example
+ * 输入：
+ * type A = { name: string; age: number; visible: boolean };
+ * type B = { age: number };
+ * type C = _Subtract<A, B>;
+ * 输出：
+ * type C = {
+ *  name: string;
+ *  visible: boolean;
+ * }
+ */
+export type _Subtract<T extends T1, T1 extends object> = _Diff<T, T1>;
