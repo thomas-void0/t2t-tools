@@ -419,6 +419,15 @@ type _Unionize<T> = {
  */
 type _PromiseType<T extends Promise<any>> = T extends Promise<infer P> ? P : never
 
+type _Primitive =
+  | string
+  | number
+  | bigint
+  | boolean
+  | symbol
+  | null
+  | undefined;
+
 export {
    _Pick,
    _Readonly,
@@ -451,6 +460,7 @@ export {
    _OmitByValue,
    _OmitByValueExact,
    _Unionize,
-   _PromiseType
+   _PromiseType,
+   _Primitive
 }
 
