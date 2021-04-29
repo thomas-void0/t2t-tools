@@ -6,4 +6,5 @@ export { _NonFunctionKeys, _NonFunction } from "../example/nonFunctionKeys";
 export { _OptionalKeys } from "../example/optionalKeys";
 export { _Readonly } from "../example/readonlyKeys";
 export { _RequiredKeys } from "../example/requiredKeys";
-import { _Subtract, _Diff } from "../example/diff";
+export { _Subtract, _Diff } from "../example/diff";
+export { _OverWrite } from "../example/overwrite";
