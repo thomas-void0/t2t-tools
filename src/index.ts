@@ -8,3 +8,4 @@ export { _Readonly } from "../example/readonlyKeys";
 export { _RequiredKeys } from "../example/requiredKeys";
 export { _Subtract, _Diff } from "../example/diff";
 export { _OverWrite } from "../example/overwrite";
+export { _Optional } from "../example/optional";
