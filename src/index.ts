@@ -11,3 +11,4 @@ export { _OverWrite } from "../example/overwrite";
 export { _Optional } from "../example/optional";
 export { _EnhancedRequired } from "../example/enhancedRequired";
 export { _UnionToIntersection } from "../example/unionToIntersection";
+export { _ValuesType } from "../example/valuesType";
