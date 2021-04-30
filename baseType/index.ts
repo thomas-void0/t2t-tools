@@ -419,6 +419,7 @@ type _Unionize<T> = {
  */
 type _PromiseType<T extends Promise<any>> = T extends Promise<infer P> ? P : never
 
+
 type _Primitive =
   | string
   | number
