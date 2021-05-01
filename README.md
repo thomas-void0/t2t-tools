@@ -1,2 +1,3 @@
-# typescript-type-tools
-一个ts类型工具练习
+# typescript 类型工具库
+
+mapped-types 工具库以及其他常用工具的实现
