@@ -14,3 +14,4 @@ export { _UnionToIntersection } from "../example/unionToIntersection";
 export { _ValuesType } from "../example/valuesType";
 export { _DeepReadonly } from "../example/deepReadonly";
 export { _DeepRequired } from "../example/deepRequired";
+export { _DeepNonNullable } from "../example/deepNonNullable";

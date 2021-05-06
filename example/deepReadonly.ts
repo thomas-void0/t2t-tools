@@ -1,4 +1,4 @@
-import { _Primitive } from "../baseType";
+import { _Pick, _Primitive } from "../baseType";
 /**
  * 深度设置readonly
  * @example
