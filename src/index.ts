@@ -15,3 +15,4 @@ export { _ValuesType } from "../example/valuesType";
 export { _DeepReadonly } from "../example/deepReadonly";
 export { _DeepRequired } from "../example/deepRequired";
 export { _DeepNonNullable } from "../example/deepNonNullable";
+export { _DeepPartial } from "../example/deepPartial";

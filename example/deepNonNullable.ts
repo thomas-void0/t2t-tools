@@ -10,7 +10,7 @@ import { _NonNullable } from "../baseType";
  *       };
  *     };
  *   };
- * type example = _DeepReadonly<Example>
+ * type example = _DeepNonNullable<Example>
  * 输出：
  *   type example = {
  *     first?: null | {
