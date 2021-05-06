@@ -1,6 +1,7 @@
 import { _Primitive } from "../baseType";
 /**
- * 要求：
+ * 深度设置readonly
+ * @example
  * 输入：
  *  type Example = {
  *     first: {
@@ -20,17 +21,19 @@ import { _Primitive } from "../baseType";
  *    }
  */
 //_DeepReadonly
-export type DeepReadonly<T> = T extends ((...args: any[]) => any) | Primitive
+export type _DeepReadonly<T> = T extends ((...args: any[]) => any) | _Primitive
   ? T
   : T extends _DeepReadonlyArray<infer U>
   ? _DeepReadonlyArray<U>
   : T extends _DeepReadonlyObject<infer V>
   ? _DeepReadonlyObject<V>
   : T;
-/** @private */
-// tslint:disable-next-line:class-name
-export interface _DeepReadonlyArray<T> extends ReadonlyArray<DeepReadonly<T>> {}
-/** @private */
+
+//是否能够满足深度数组
+export interface _DeepReadonlyArray<T>
+  extends ReadonlyArray<_DeepReadonly<T>> {}
+
+//是否能够满足深度对象
 export type _DeepReadonlyObject<T> = {
-  readonly [P in keyof T]: DeepReadonly<T[P]>;
+  readonly [P in keyof T]: _DeepReadonly<T[P]>;
 };
