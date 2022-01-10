@@ -16,3 +16,7 @@ export { _DeepReadonly } from "../example/deepReadonly";
 export { _DeepRequired } from "../example/deepRequired";
 export { _DeepNonNullable } from "../example/deepNonNullable";
 export { _DeepPartial } from "../example/deepPartial";
+export { Replace } from "../example/replace";
+export { Trim } from "../example/trim";
+export { Pop } from "../example/pop";
+export { Shift } from "../example/shift";

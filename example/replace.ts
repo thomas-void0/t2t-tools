@@ -1,4 +1,4 @@
-type Replace<
+export type Replace<
   Str extends string,
   From extends string,
   To extends string

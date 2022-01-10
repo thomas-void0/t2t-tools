@@ -1,4 +1,4 @@
-type Pop<T extends unknown[]> = T extends [...infer Rest, infer R]
+export type Pop<T extends unknown[]> = T extends [...infer Rest, infer R]
   ? [...Rest]
   : never;
 

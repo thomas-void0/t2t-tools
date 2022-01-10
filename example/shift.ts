@@ -1,4 +1,4 @@
-type Shift<T extends unknown[]> = T extends [infer R, ...infer Rest]
+export type Shift<T extends unknown[]> = T extends [infer R, ...infer Rest]
   ? [...Rest]
   : never;
 

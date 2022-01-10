@@ -16,6 +16,6 @@ type TrimRight<Str extends string> = Str extends `${infer Rest}${
 
 type trimRRest = TrimRight<"123 ">;
 
-type Trim<T extends string> = TrimLeft<TrimRight<T>>;
+export type Trim<T extends string> = TrimLeft<TrimRight<T>>;
 
 type trimRes = Trim<" 123 ">;
