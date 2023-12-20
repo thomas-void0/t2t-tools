@@ -7,7 +7,7 @@
   "repository": "https://github.com/thomas-void0/t2t-tools",
   "homepage": "https://github.com/thomas-void0/t2t-tools",
   "scripts": {
-    "build": "tsc -p ./tsconfig.json --outDir dist/"
+    "build": "rm -rf ./dist && tsc -p ./tsconfig.json --outDir dist/"
   },
   "engines": {
     "node": ">= 4"
