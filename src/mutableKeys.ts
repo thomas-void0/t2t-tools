@@ -1,4 +1,4 @@
-import { Equals } from './Equals'
+import { Equals } from './equals'
 
 /**
  * 返回非readonly的类型
