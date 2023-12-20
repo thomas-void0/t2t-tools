@@ -1,7 +1,5 @@
-./pnpm-lock.yaml
-.gitignore
-node_modules
-tsconfig.json
-.prettierignore
-.prettierrc.js
-/src
+*
+!dist/*
+!LICENSE
+!README.md
+!CHANGELOG.md
