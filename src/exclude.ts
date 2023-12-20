@@ -1,0 +1,9 @@
+/**
+ * 从联合类型T中排除与联合类型U相同的部分
+ * @example
+ * 输入：
+ * type example = Exclude<'a' | 'b' | 'c', 'a'>
+ * 输出：
+ * type example = "b" | "c"
+ */
+export type Exclude<T, U> = T extends U ? never : T

@@ -1,14 +1,16 @@
+import { Diff } from './diff'
+
 /**
- * 找出T类型中，与U类型不相同的属性
+ * 获取子集中的差异
  * @example
  * 输入：
  * type A = { name: string; age: number; visible: boolean };
  * type B = { age: number };
- * type C = Diff<A, B>;
+ * type C = Subtract<A, B>;
  * 输出：
  * type C = {
  *  name: string;
  *  visible: boolean;
  * }
  */
-export type Diff<T extends object, U extends object> = Omit<T, keyof T & keyof U>
+export type Subtract<T extends T1, T1 extends object> = Diff<T, T1>

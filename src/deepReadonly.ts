@@ -1,4 +1,4 @@
-import { _Pick, _Primitive } from "../baseType";
+import { Primitive } from './primitive'
 /**
  * 深度设置readonly
  * @example
@@ -10,7 +10,7 @@ import { _Pick, _Primitive } from "../baseType";
  *       };
  *     };
  *   };
- * type example = _DeepReadonly<Example>
+ * type example = DeepReadonly<Example>
  * 输出：
  *   type example = {
  *      readonly first: {
@@ -20,20 +20,19 @@ import { _Pick, _Primitive } from "../baseType";
  *      };
  *    }
  */
-//_DeepReadonly
-export type _DeepReadonly<T> = T extends ((...args: any[]) => any) | _Primitive
-  ? T
-  : T extends _DeepReadonlyArray<infer U>
-  ? _DeepReadonlyArray<U>
-  : T extends _DeepReadonlyObject<infer V>
-  ? _DeepReadonlyObject<V>
-  : T;
+//DeepReadonly
+export type DeepReadonly<T> = T extends ((...args: any[]) => any) | Primitive
+	? T
+	: T extends DeepReadonlyArray<infer U>
+		? DeepReadonlyArray<U>
+		: T extends DeepReadonlyObject<infer V>
+			? DeepReadonlyObject<V>
+			: T
 
 //是否能够满足深度数组
-export interface _DeepReadonlyArray<T>
-  extends ReadonlyArray<_DeepReadonly<T>> {}
+export interface DeepReadonlyArray<T> extends ReadonlyArray<DeepReadonly<T>> {}
 
 //是否能够满足深度对象
-export type _DeepReadonlyObject<T> = {
-  readonly [P in keyof T]: _DeepReadonly<T[P]>;
-};
+export type DeepReadonlyObject<T> = {
+	readonly [P in keyof T]: DeepReadonly<T[P]>
+}

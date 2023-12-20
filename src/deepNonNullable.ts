@@ -1,4 +1,3 @@
-import { _NonNullable } from "../baseType/index";
 /**
  * 深度去除null和undefined
  * @example
@@ -10,7 +9,7 @@ import { _NonNullable } from "../baseType/index";
  *       };
  *     };
  *   };
- * type example = _DeepNonNullable<Example>
+ * type example = DeepNonNullable<Example>
  * 输出：
  *   type example = {
  *     first?: null | {
@@ -20,19 +19,18 @@ import { _NonNullable } from "../baseType/index";
  *       };
  *    };
  */
-export type _DeepNonNullable<T> = T extends (...args: any[]) => any
-  ? T
-  : T extends any[]
-  ? _DeepNonNullableArray<T[number]>
-  : T extends object
-  ? _DeepNonNullableObject<T>
-  : T;
+export type DeepNonNullable<T> = T extends (...args: any[]) => any
+	? T
+	: T extends any[]
+		? DeepNonNullableArray<T[number]>
+		: T extends object
+			? DeepNonNullableObject<T>
+			: T
 
 //如果属于数组
-export interface _DeepNonNullableArray<T>
-  extends Array<_DeepNonNullable<_NonNullable<T>>> {}
+export interface DeepNonNullableArray<T> extends Array<DeepNonNullable<NonNullable<T>>> {}
 
 //如果属于对象
-export type _DeepNonNullableObject<T> = {
-  [P in keyof T]-?: _DeepNonNullable<_NonNullable<T[P]>>;
-};
+export type DeepNonNullableObject<T> = {
+	[P in keyof T]-?: DeepNonNullable<NonNullable<T[P]>>
+}

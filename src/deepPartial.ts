@@ -9,7 +9,7 @@
  *       };
  *     };
  *   };
- *   type example = _DeepPartial<NestedProps>;
+ *   type example = DeepPartial<NestedProps>;
  * 输出：
  *  type example = {
  *   first?:{
@@ -19,16 +19,16 @@
  *   }
  * }
  */
-export type _DeepPartial<T> = T extends Function
-  ? T
-  : T extends Array<infer U>
-  ? _DeepPartialArray<U>
-  : T extends object
-  ? _DeepPartialObject<T>
-  : T | undefined;
+export type DeepPartial<T> = T extends Function
+	? T
+	: T extends Array<infer U>
+		? DeepPartialArray<U>
+		: T extends object
+			? DeepPartialObject<T>
+			: T | undefined
 
 //如果是数组
-export interface _DeepPartialArray<T> extends Array<_DeepPartial<T>> {}
+export interface DeepPartialArray<T> extends Array<DeepPartial<T>> {}
 
 //如果是对象
-export type _DeepPartialObject<T> = { [P in keyof T]?: _DeepPartial<T[P]> };
+export type DeepPartialObject<T> = { [P in keyof T]?: DeepPartial<T[P]> }

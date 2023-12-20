@@ -1,4 +1,5 @@
-import { _NonUndefined } from "../baseType";
+import { NonUndefined } from './nonUndefined'
+
 /**
  * 全部设置为必须
  * @example
@@ -10,7 +11,7 @@ import { _NonUndefined } from "../baseType";
  *       };
  *     };
  *   };
- * type example = _DeepRequired<NestedProps>;
+ * type example = DeepRequired<NestedProps>;
  * 输出：
  * type example = {
  *     first?: {
@@ -21,19 +22,18 @@ import { _NonUndefined } from "../baseType";
  *   };
  */
 
-export type _DeepRequired<T> = T extends (...args: any[]) => any
-  ? T
-  : T extends any[]
-  ? _DeepRequiredArray<T[number]>
-  : T extends object
-  ? _DeepRequiredObject<T>
-  : T;
+export type DeepRequired<T> = T extends (...args: any[]) => any
+	? T
+	: T extends any[]
+		? DeepRequiredArray<T[number]>
+		: T extends object
+			? DeepRequiredObject<T>
+			: T
 
 //如果为数组，则执行
-export interface _DeepRequiredArray<T>
-  extends Array<_DeepRequired<_NonUndefined<T>>> {}
+export interface DeepRequiredArray<T> extends Array<DeepRequired<NonUndefined<T>>> {}
 
 //如果为对象，则执行
-export type _DeepRequiredObject<T> = {
-  [P in keyof T]-?: _DeepRequired<_NonUndefined<T[P]>>;
-};
+export type DeepRequiredObject<T> = {
+	[P in keyof T]-?: DeepRequired<NonUndefined<T[P]>>
+}
