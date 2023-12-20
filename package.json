@@ -1,13 +1,19 @@
 {
-  "name": "type-tools",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "t2t-tools",
+  "version": "0.0.1",
+  "description": "type conversion tool of typescript",
+  "main": "index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "type",
+    "typescript",
+    "类型转换",
+    "ts",
+    "tools"
+  ],
+  "author": "thomas-void0",
+  "license": "MIT",
   "devDependencies": {}
 }

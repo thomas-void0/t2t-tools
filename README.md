@@ -1,3 +1,3 @@
-# typescript 类型工具库
+# t2t-tools
 
-mapped-types 工具库以及其他常用工具的实现
+type conversion tool of typescript.
