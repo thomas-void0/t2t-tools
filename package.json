@@ -7,7 +7,8 @@
   "repository": "https://github.com/thomas-void0/t2t-tools",
   "homepage": "https://github.com/thomas-void0/t2t-tools",
   "scripts": {
-    "build": "rm -rf ./dist && tsc -p ./tsconfig.json --outDir dist/"
+    "build": "rm -rf ./dist && tsc -p ./tsconfig.json --outDir dist/",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
   },
   "engines": {
     "node": ">= 4"
@@ -23,7 +24,7 @@
   "author": "thomas-void0",
   "license": "MIT",
   "devDependencies": {
-    "conventional-changelog": "^5.1.0",
+    "conventional-changelog-cli": "^4.1.0",
     "prettier": "^3.1.1",
     "typescript": "^5.3.3"
   }
