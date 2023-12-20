@@ -2,9 +2,9 @@
   "name": "t2t-tools",
   "version": "0.0.1",
   "description": "type conversion tool of typescript",
-  "main": "index.ts",
+  "types": "./dist/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": ""
   },
   "keywords": [
     "type",
@@ -15,5 +15,8 @@
   ],
   "author": "thomas-void0",
   "license": "MIT",
-  "devDependencies": {}
+  "devDependencies": {
+    "conventional-changelog": "^5.1.0",
+    "typescript": "^5.3.3"
+  }
 }
