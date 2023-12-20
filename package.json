@@ -23,6 +23,7 @@
   ],
   "author": "thomas-void0",
   "license": "MIT",
+  "dependencies":{},
   "devDependencies": {
     "conventional-changelog-cli": "^4.1.0",
     "prettier": "^3.1.1",
