@@ -19,4 +19,4 @@
 // export { Pop } from "../example/pop";
 // export { Shift } from "../example/shift";
 
-export { _DeepNonNullable } from "../example/deepNonNullable";
+export { _DeepNonNullable } from "./deepNonNullable";

@@ -8,6 +8,9 @@ devDependencies:
   conventional-changelog:
     specifier: ^5.1.0
     version: registry.npmmirror.com/conventional-changelog@5.1.0
+  prettier:
+    specifier: ^3.1.1
+    version: registry.npmmirror.com/prettier@3.1.1
   typescript:
     specifier: ^5.3.3
     version: registry.npmmirror.com/typescript@5.3.3
@@ -533,6 +536,14 @@ packages:
     name: path-exists
     version: 5.0.0
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+    dev: true
+
+  registry.npmmirror.com/prettier@3.1.1:
+    resolution: {integrity: sha512-22UbSzg8luF4UuZtzgiUOfcGM8s4tjBv6dJRT7j275NXsy2jb4aJa4NNveul5x4eqlF1wuhuR2RElK71RvmVaw==, registry: https://packages.aliyun.com/5f0d166f5fd102f22f6b767b/npm/npm-registry/, tarball: https://registry.npmmirror.com/prettier/-/prettier-3.1.1.tgz}
+    name: prettier
+    version: 3.1.1
+    engines: {node: '>=14'}
+    hasBin: true
     dev: true
 
   registry.npmmirror.com/read-pkg-up@10.1.0:

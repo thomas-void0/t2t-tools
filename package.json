@@ -2,21 +2,29 @@
   "name": "t2t-tools",
   "version": "0.0.1",
   "description": "type conversion tool of typescript",
+  "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "repository": "https://github.com/thomas-void0/t2t-tools",
+  "homepage": "https://github.com/thomas-void0/t2t-tools",
   "scripts": {
-    "build": ""
+    "build": "tsc -p ./tsconfig.json --outDir dist/"
+  },
+  "engines": {
+    "node": ">= 4"
   },
   "keywords": [
-    "type",
+    "types",
     "typescript",
     "类型转换",
     "ts",
-    "tools"
+    "tools",
+    "utility"
   ],
   "author": "thomas-void0",
   "license": "MIT",
   "devDependencies": {
     "conventional-changelog": "^5.1.0",
+    "prettier": "^3.1.1",
     "typescript": "^5.3.3"
   }
 }
