@@ -21,9 +21,3 @@ export type MutableFunctionKeys<T extends object> = {
 			: never
 		: never
 }[keyof T]
-type Example = {
-	name: string | undefined
-	setName: (...args: any) => any | undefined
-	someKeys?: string
-	someFn?: (...args: any) => any
-}
