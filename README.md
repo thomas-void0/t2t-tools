@@ -1,4 +1,4 @@
-# t2t-tools <img src="https://img.shields.io/npm/v/t2t-tools.svg" alt="npm package">
+# t2t-tools [![Publish](https://github.com/thomas-void0/t2t-tools/actions/workflows/publish.yml/badge.svg)](https://github.com/thomas-void0/t2t-tools/actions/workflows/publish.yml) <img src="https://img.shields.io/npm/v/t2t-tools.svg" alt="npm package">
 
 type conversion tool of typescript.
 
