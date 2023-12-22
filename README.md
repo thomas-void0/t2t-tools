@@ -85,3 +85,4 @@ type A = Merge<{ a: number; c: boolean }, { a: string; b: number }>
 |       Unionize        |                 将类型T拆解为联合类型                 |
 |  UnionToIntersection  |                  联合类型转交叉类型                   |
 |      ValuesType       |    获取对象、数组、类数组中的值的类型组成联合类型     |
+|     GetArrayValue     |                  获取数组元素的类型                   |
