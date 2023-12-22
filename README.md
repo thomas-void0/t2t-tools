@@ -1,6 +1,33 @@
-# t2t-tools [![Publish](https://github.com/thomas-void0/t2t-tools/actions/workflows/publish.yml/badge.svg)](https://github.com/thomas-void0/t2t-tools/actions/workflows/publish.yml) <img src="https://img.shields.io/npm/v/t2t-tools.svg" alt="npm package">
+# t2t-tools <img src="https://img.shields.io/npm/v/t2t-tools.svg" alt="npm package">
 
 t2t-tools is type conversion tool of typescript.
+
+# install
+
+```shell
+npm install t2t-tools -D
+```
+
+# how use
+
+modify your `tsconfig.json`, add `node_modules/t2t-tools/dist`:
+
+```json
+{
+	"compilerOptions": {...},
+	"include": [...,"node_modules/t2t-tools/dist"]
+}
+```
+
+# example
+
+```ts
+import { Merge } from 't2t-tools'
+
+type A = Merge<{ a: number; c: boolean }, { a: string; b: number }>
+
+// A = { a: string; b: number; c: boolean }
+```
 
 # API
 
