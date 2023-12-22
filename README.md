@@ -12,7 +12,7 @@ npm install t2t-tools -D
 
 modify your `tsconfig.json`, add `node_modules/t2t-tools/dist`:
 
-```json
+```txt
 {
 	"compilerOptions": {...},
 	"include": [...,"node_modules/t2t-tools/dist"]
@@ -29,7 +29,7 @@ type A = Merge<{ a: number; c: boolean }, { a: string; b: number }>
 // A = { a: string; b: number; c: boolean }
 ```
 
-# API
+# api
 
 |        方法名         |                         解释                          |
 | :-------------------: | :---------------------------------------------------: |
