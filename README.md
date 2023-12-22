@@ -8,17 +8,6 @@ t2t-tools is type conversion tool of typescript.
 npm install t2t-tools -D
 ```
 
-# how use
-
-modify your `tsconfig.json`, add `node_modules/t2t-tools/dist`:
-
-```txt
-{
-	"compilerOptions": {...},
-	"include": [...,"node_modules/t2t-tools/dist"]
-}
-```
-
 # example
 
 ```ts
