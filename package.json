@@ -2,8 +2,10 @@
   "name": "t2t-tools",
   "version": "0.1.1",
   "description": "type conversion tool of typescript",
-  "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "files": [
+    "./dist/*.d.ts"
+  ],
   "repository": "https://github.com/thomas-void0/t2t-tools",
   "homepage": "https://github.com/thomas-void0/t2t-tools",
   "scripts": {

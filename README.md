@@ -2,13 +2,32 @@
 
 t2t-tools is type conversion tool of typescript.
 
-# install
+## Install
 
-```shell
+```bash
 npm install t2t-tools -D
 ```
 
-# example
+## Usage
+
+Add to a d.ts declaration file
+```ts
+/// <reference types="t2t-tools" />
+```
+
+OR
+
+add `t2t-tools` to `compilerOptions.types` inside tsconfig.json
+
+```json
+{
+  "compilerOptions": {
+    "types": ["t2t-tools"]
+  }
+}
+```
+
+## Example
 
 ```ts
 import { Merge } from 't2t-tools'
@@ -18,7 +37,7 @@ type A = Merge<{ a: number; c: boolean }, { a: string; b: number }>
 // A = { a: string; b: number; c: boolean }
 ```
 
-# api
+## API
 
 |        方法名         |                         解释                          |
 | :-------------------: | :---------------------------------------------------: |
