@@ -2,7 +2,31 @@
 
 t2t-tools is type conversion tool of typescript.
 
-# API
+## Install
+```bash
+npm install t2t-tools -D
+```
+
+## Usage
+
+Add to a d.ts declaration file
+```ts
+/// <reference types="t2t-tools" />
+```
+
+OR
+
+add `t2t-tools` to `compilerOptions.types` inside tsconfig.json
+
+```json
+{
+  "compilerOptions": {
+    "types": ["t2t-tools"]
+  }
+}
+```
+
+## API
 
 |        方法名         |                         解释                          |
 | :-------------------: | :---------------------------------------------------: |
