@@ -1,8 +1,9 @@
-# t2t-tools [![Publish](https://github.com/thomas-void0/t2t-tools/actions/workflows/publish.yml/badge.svg)](https://github.com/thomas-void0/t2t-tools/actions/workflows/publish.yml) <img src="https://img.shields.io/npm/v/t2t-tools.svg" alt="npm package">
+# t2t-tools <img src="https://img.shields.io/npm/v/t2t-tools.svg" alt="npm package">
 
 t2t-tools is type conversion tool of typescript.
 
 ## Install
+
 ```bash
 npm install t2t-tools -D
 ```
@@ -24,6 +25,16 @@ add `t2t-tools` to `compilerOptions.types` inside tsconfig.json
     "types": ["t2t-tools"]
   }
 }
+```
+
+## Example
+
+```ts
+import { Merge } from 't2t-tools'
+
+type A = Merge<{ a: number; c: boolean }, { a: string; b: number }>
+
+// A = { a: string; b: number; c: boolean }
 ```
 
 ## API
@@ -82,3 +93,4 @@ add `t2t-tools` to `compilerOptions.types` inside tsconfig.json
 |       Unionize        |                 将类型T拆解为联合类型                 |
 |  UnionToIntersection  |                  联合类型转交叉类型                   |
 |      ValuesType       |    获取对象、数组、类数组中的值的类型组成联合类型     |
+|     GetArrayValue     |                  获取数组元素的类型                   |
